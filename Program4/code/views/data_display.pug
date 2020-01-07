@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    h1 #{title}
+    br
+    h3 #[u Search Parameters]
+    p #[b First name:] #{first}
+    p #[b Last name:] #{last}
+    br
+    p #[b Search Results: ]
+    p !{dataInput}
+    p #[b #[i If query is being attempted, but data is missing, then please reload the data.]]
+    form(method='POST' action='/data')
+        div.input
+        label(for='url') Load Data: 
+        input(type='url', placeholder='URL' name='url')
+        input(type="submit", value="Reload")
+    br
+    form(action="https://eric-feldman-program4.azurewebsites.net/")
+          input(type="submit", value="Home")

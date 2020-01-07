@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  h1 Website Storage Project
+  hr
+  h4 Database File Input
+  form(method='POST' action='/data')
+          div.input
+            label(for='url') Load Data: 
+            input(type='url', placeholder='URL' name='url') 
+            br
+            input(type="submit", value="Load")
+
+  form(method='POST' action='/delete') 
+          div.input
+            input(type="submit", value="Clear") 
+  br 
+  hr
+  h4 Query Database
+  form(method='GET' action='/query')
+          div.input
+            label(for='first_name') First Name: #[i (case-sensitive)]
+            br
+            input(type='name', placeholder='First name' name='first_name')
+          div.input
+            label(for='last_name') Last Name: #[i (case-sensitive)]
+            br
+            input(type='name', placeholder='Last name' name='last_name')
+          div.actions
+            input(type="submit", value="Query")
+  br
+  hr
+  form(action="https://ericeldmanstorage.blob.core.windows.net/program4file/data.txt")
+          input(type="submit", value="Data Object Storage")

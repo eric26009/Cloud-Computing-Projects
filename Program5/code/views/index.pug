@@ -1,0 +1,73 @@
+extends layout
+
+block content
+  h1 CheapO Hotel Search Engine
+  hr
+  h3 Travel Destination Search
+  form(method='GET' action='/data')
+          div.input
+            label(for='searchInput') #[b Destination to search:] 
+            input(placeholder='Destination' name='searchInput') 
+            br
+          div.input
+            label(for='people') #[b Number of people: ]
+            select(name='people', id='people')
+              each val in ['1' , '2' , '3']
+                option=val
+          div.actions
+            input(type="submit", value="Search")
+  br 
+  hr
+  label(for='recentSearches') #[b Favorite Destinations] 
+  br
+  br
+  div(class='recent')
+    a(href="/data?searchInput="+rs1n+"&people=1")
+      img.image(src= rs1l alt=rs1n style="width:100px;height:100px;" hspace="10")
+    a(href="/data?searchInput="+rs2n+"&people=1")
+      img.image(src= rs2l style="width:100px;height:100px;" hspace="10")
+    a(href="/data?searchInput="+rs3n+"&people=1")
+      img.image(src= rs3l style="width:100px;height:100px;" hspace="10")
+    a(href="/data?searchInput="+rs4n+"&people=1")
+      img.image(src= rs4l style="width:100px;height:100px;" hspace="10")
+    a(href="/data?searchInput="+rs5n+"&people=1")
+      img.image(src= rs5l style="width:100px;height:100px;" hspace="10")  
+  
+  //- head
+  //-  title Simple Map
+  //-  meta(name='viewport' content='initial-scale=1.0')
+  //-  meta(charset='utf-8')
+  //-  style.
+  //-    /* Always set the map height explicitly to define the size of the div
+  //-    * element that contains the map. */
+  //-    #map {
+  //-    height: 100%;
+  //-    }
+  //-    /* Optional: Makes the sample page fill the window. */
+  //-    html, body {
+  //-    height: 80%;
+  //-    width: 80%;
+  //-    margin: 0;
+  //-    padding: 0;
+  //-    }
+  //- #map
+  //- script.
+  //-  function initMap() {
+  //-  var map2;
+  //-  map2 = new google.maps.Map(document.getElementById('map'), {
+  //-  center: {lat: -34.397, lng: 150.644},
+  //-  zoom: 8
+  //-  });
+  
+  //-  var location = {lat: -34.397, lng: 150.664};
+  //-  var marker = new google.maps.Marker({
+  //-    position: location,
+  //-    map: map2
+  //-  });
+  //-  }
+  //- script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCe1Gvuys89XmSKD6oNiWHcliyE0DfBTQU&callback=initMap' async='' defer='')
+
+  br
+  hr
+  form(action="https://program5storage1.blob.core.windows.net/program5file/TravelTips.pdf")
+          input(type="submit", value="Travel Tips Document")

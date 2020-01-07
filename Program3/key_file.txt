@@ -1,0 +1,3 @@
+Replace this line with your AWS_ACCESS_KEY_ID
+Replace this line with your AWS_SECRET_ACCESS_KEY
+Replace this line with your BUCKET_NAME
