@@ -1,0 +1,28 @@
+body {
+  padding: 5px;
+  max-width: 800px;
+  margin: auto;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: steelblue;
+  background-image: url("../images/travel_background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  text-align: center;
+}
+
+a {
+  color: #ffffff;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.boxed {
+  border: 5px solid green ;
+  /* background: #d6d6d6fd; */
+}
+

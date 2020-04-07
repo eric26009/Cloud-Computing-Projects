@@ -1,0 +1,59 @@
+extends layout
+
+block content
+  br
+  div(class='boxed')
+    h3 #[b Least Expensive Hotel Details:]
+    p  #[b Hotel name: ]#{hotelName}
+    p  #[b Address: ]#{address}
+    p #[b Price for #[u 1] night for #[u #{people}] people: ] #{price} #{currency}
+    p #[b Review score: ] #{reviewScore}
+    p #[b Location score: ] #{locationScore}
+    form(action= bookingLink)
+        input(type="submit", value="Book Now!")
+    br
+    form(action="https://travel436.azurewebsites.net/")
+      input(type="submit", value="Home")
+    br
+    img.image(src= locationLink)
+    br
+  br
+  hr
+  br
+  title Simple Map
+  meta(name='viewport' content='initial-scale=1.0')
+  meta(charset='utf-8')
+  style.
+    /* Always set the map height explicitly to define the size of the div
+    * element that contains the map. */
+    #map {
+    height: 90%;
+    }
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
+    max-width: 800px;
+    margin: auto;
+    height: 400px;
+    }
+  #map
+  script.
+    function initMap() {
+    var longitude = !{lnIn};
+    var latitude = !{ltIn};
+    var myMap;
+    myMap = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: latitude, lng: longitude},
+    zoom: 12
+    });
+    
+    console.log('trying to find out the long');
+    console.log(longitude);
+    var location = {lat: latitude, lng: longitude};
+    var marker = new google.maps.Marker({
+      position: location,
+      map: myMap,
+    });
+    }
+  script(src='https://maps.googleapis.com/maps/api/js?key=REPLACE_WITH_KEY_&callback=initMap' async='' defer='')
+  hr
+  br
